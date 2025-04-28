@@ -70,7 +70,7 @@ environment:
         package_manager_environment:
             name: ""
             target: ""
-    compose_file_path: ""
+    compose_file_path: deploy/docker/local_deployment_single_gpu/compose.yaml
 execution:
     apps: []
     resources:
