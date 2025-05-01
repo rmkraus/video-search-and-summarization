@@ -99,6 +99,9 @@ services:
       CA_RAG_EMBEDDINGS_DIMENSION: "500"
     depends_on:
       - graph-db
+      - llama-3-1-8b-instruct
+      - llama-3-2-nv-embedqa
+      - llama-3.2-nv-rerankqa
     ulimits:
       memlock:
         soft: -1
