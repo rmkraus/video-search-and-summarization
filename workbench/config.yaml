@@ -20,13 +20,13 @@ summarization:
   method: "batch"
   llm:
     model: "meta/llama-3.1-8b-instruct"
-    base_url: "http://host.docker.internal:8007/v1" #FIXME - update url to running LLM Instance
+    base_url: "https://integrate.api.nvidia.com/v1" #FIXME - can update url to local LLM Instance eg. "http://<ip-addr>:8007/v1" 
     max_tokens: 2048
     temperature: 0.2
     top_p: 0.7
   embedding:
     model: "nvidia/llama-3.2-nv-embedqa-1b-v2"
-    base_url: "http://host.docker.internal:8006/v1" #FIXME - update url to running embedding NIM instance
+    base_url: "https://integrate.api.nvidia.com/v1" #FIXME - update url to running embedding NIM instance, eg. "http://<ip-addr>:8006/v1" 
   params:
     batch_size: 5
     batch_max_concurrency: 20
@@ -38,27 +38,27 @@ summarization:
 chat:
   rag: graph-rag # graph-rag or vector-rag #If using a small LLM model, vector-rag is recommended.
   params:
-    batch_size: 1
+    batch_size: 5
     top_k: 5
   llm:
     model: "meta/llama-3.1-8b-instruct"
-    base_url: "http://host.docker.internal:8007/v1" #FIXME - update url to running LLM Instance
+    base_url: "https://integrate.api.nvidia.com/v1" #FIXME - can update url to local LLM Instance eg. "http://<ip-addr>:8007/v1" 
     max_tokens: 2048
     temperature: 0.2
     top_p: 0.7
   embedding:
     model: "nvidia/llama-3.2-nv-embedqa-1b-v2"
-    base_url: "http://host.docker.internal:8006/v1" #FIXME - update url to running embedding NIM Instance
+    base_url: "https://integrate.api.nvidia.com/v1" #FIXME - update url to running embedding NIM instance, eg. "http://<ip-addr>:8006/v1" 
   reranker:
     model: "nvidia/llama-3.2-nv-rerankqa-1b-v2"
-    base_url: "http://host.docker.internal:8005/v1" #FIXME - update url to running reranker NIM Instance
+    base_url: "https://integrate.api.nvidia.com/v1" #FIXME - update url to running reranker NIM Instance, eg. "http://<ip-addr>:8005/v1" 
 
 notification:
   enable: true
   endpoint: "http://host.docker.internal:60000/via-alert-callback"
   llm:
     model: "meta/llama-3.1-8b-instruct"
-    base_url: "http://host.docker.internal:8007/v1" #FIXME - update url to running LLM Instance
+    base_url: "https://integrate.api.nvidia.com/v1" #FIXME - can update url to local LLM Instance eg. "http://<ip-addr>:8007/v1" 
     max_tokens: 2048
     temperature: 0.2
     top_p: 0.7
