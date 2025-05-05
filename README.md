@@ -18,6 +18,10 @@ This repository is what powers the [build experience](https://build.nvidia.com/n
 
 Insightful, accurate, and interactive video analytics AI agents enable a range of industries to make better decisions faster. These AI agents are given tasks through natural language and can perform complex operations like video summarization and visual question-answering, unlocking entirely new application possibilities. The NVIDIA AI Blueprint makes it easy to get started building and customizing video analytics AI agents for video search and summarization — all powered by generative AI, vision language models (VLMs) like Cosmos Nemotron VLMs, large language models (LLMs) like Llama Nemotron LLMs, NVIDIA NeMo Retriever, and NVIDIA NIM.
 
+| :exclamation: Important |
+| :-----------------------|
+| Users running this blueprint with [NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/) should skip to the quickstart section [here](workbench/README.md#get-started)! |
+
 ## Use Case / Problem Description
 The NVIDIA AI Blueprint for Video Search and Summarization addresses the challenge of efficiently analyzing and summarizing large volumes of video data. This can be used to create vision AI agents, that can be applied to a multitude of use cases such as monitoring smart spaces, warehouse automation, and SOP validation. This is important where quick and accurate video analysis can lead to better decision-making and enhanced operational efficiency.
 
@@ -108,6 +112,12 @@ For custom VSS deployments through Docker Compose, multiple samples are provided
 **Ideal for:** Production deployments that need to integrate with other systems. Helm offers advantages such as easy upgrades, rollbacks, and management of complex deployments.
 
 The `/deploy/helm/` directory contains a `nvidia-blueprint-vss-2.3.0.tgz` file which can be used to spin up VSS. Refer to the [documentation here](https://docs.nvidia.com/vss/latest/content/run_via.html#) for detailed instructions.
+
+### NVIDIA AI Workbench Deployment
+
+| :exclamation: Important |
+| :-----------------------|
+| Users running this blueprint with [NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/) should skip to the quickstart section [here](workbench/README.md#get-started)! |
 
 #### System Requirements
 

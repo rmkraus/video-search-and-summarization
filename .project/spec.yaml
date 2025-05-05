@@ -79,7 +79,9 @@ execution:
         sharedMemoryMB: 0
     secrets:
         - variable: NVIDIA_API_KEY
-          description: Generate your API Key on build.nvidia.com
+          description: Generate your API Key on build.nvidia.com (starts with "nvapi-")
+        - variable: NGC_API_KEY
+          description: API key to pull model from NGC (does NOT start with "nvapi-")
     mounts:
         - type: project
           target: /project/
