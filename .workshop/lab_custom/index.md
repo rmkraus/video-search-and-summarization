@@ -1,26 +1,7 @@
-# Customize lab
+# Customize VSS to a Use Case
 
+## New Use Case: Workplace Safety
 
-## header 1
+## Customize off the shelf VSS
 
-asl;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-
-## header 2
-
-asl;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
-l;kdfklasjflk;saj;flksdajl;fkasdjclkansdclknsdlkansdc
+<button onclick="openOrCreateFileInJupyterLab('labs/Custom_VSS.ipynb');"><i class="fas fa-book-open"></i> Intro to VSS</button>
