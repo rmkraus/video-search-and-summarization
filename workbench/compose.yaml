@@ -23,13 +23,13 @@ configs:
         method: "batch"
         llm:
           model: ${LLM_MODEL_TO_USE}
-          base_url: ${BASE_URL_TO_USE}
+          base_url: ${LLM_BASE_URL_TO_USE}
           max_tokens: 2048
           temperature: 0.2
           top_p: 0.7
         embedding:
           model: "nvidia/llama-3.2-nv-embedqa-1b-v2"
-          base_url: ${BASE_URL_TO_USE}
+          base_url: ${EMBED_BASE_URL_TO_USE}
         params:
           batch_size: 5
           batch_max_concurrency: 20
@@ -45,23 +45,23 @@ configs:
           top_k: 5
         llm:
           model: ${LLM_MODEL_TO_USE}
-          base_url: ${BASE_URL_TO_USE}
+          base_url: ${LLM_BASE_URL_TO_USE}
           max_tokens: 2048
           temperature: 0.2
           top_p: 0.7
         embedding:
           model: "nvidia/llama-3.2-nv-embedqa-1b-v2"
-          base_url: ${BASE_URL_TO_USE}
+          base_url: ${EMBED_BASE_URL_TO_USE}
         reranker:
           model: "nvidia/llama-3.2-nv-rerankqa-1b-v2"
-          base_url: ${BASE_URL_TO_USE}
+          base_url: ${RERANK_BASE_URL_TO_USE}
 
       notification:
         enable: true
         endpoint: "http://host.docker.internal:60000/via-alert-callback"
         llm:
           model: ${LLM_MODEL_TO_USE}
-          base_url: ${BASE_URL_TO_USE}
+          base_url: ${LLM_BASE_URL_TO_USE}
           max_tokens: 2048
           temperature: 0.2
           top_p: 0.7
@@ -190,53 +190,6 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              # count: 1
-              device_ids: ["0"]
-              capabilities: [gpu]
-    extra_hosts:
-      host.docker.internal: host-gateway
-    profiles: ["local-deployment-single-gpu"]
-
-  single-llama-3-2-nv-embedqa:
-    image: nvcr.io/nim/nvidia/llama-3.2-nv-embedqa-1b-v2:1.3.0
-    shm_size: 16gb
-    ports:
-      - "8006:8000"
-    environment:
-      - NGC_API_KEY=${NVIDIA_API_KEY}
-      - NIM_SERVER_PORT=8000
-      - NIM_MODEL_PROFILE=f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
-    volumes:
-      - ${LOCAL_NIM_CACHE:-/tmp}:/opt/nim/.cache
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              # count: 1
-              device_ids: ["0"]
-              capabilities: [gpu]
-    extra_hosts:
-      host.docker.internal: host-gateway
-    profiles: ["local-deployment-single-gpu"]
-
-  single-llama-3.2-nv-rerankqa:
-    image: nvcr.io/nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:1.3.0
-    shm_size: 16gb
-    ports:
-      - "8005:8000"
-    environment:
-      - NGC_API_KEY=${NVIDIA_API_KEY}
-      - NIM_SERVER_PORT=8000
-      - NIM_MODEL_PROFILE=f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
-    volumes:
-      - ${LOCAL_NIM_CACHE:-/tmp}:/opt/nim/.cache
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              # count: 1
               device_ids: ["0"]
               capabilities: [gpu]
     extra_hosts:
@@ -259,8 +212,7 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              # count: 2
-              device_ids: ["1", "2"]
+              count: 2
               capabilities: [gpu]
     extra_hosts:
       host.docker.internal: host-gateway
@@ -282,12 +234,11 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              # count: 1
-              device_ids: ["3"]
+              device_ids: ["0"]
               capabilities: [gpu]
     extra_hosts:
       host.docker.internal: host-gateway
-    profiles: ["local-deployment-multi-gpu"]
+    profiles: ["local-deployment-single-gpu", "local-deployment-multi-gpu"]
 
   llama-3.2-nv-rerankqa:
     image: nvcr.io/nim/nvidia/llama-3.2-nv-rerankqa-1b-v2:1.3.0
@@ -305,12 +256,11 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              # count: 1
-              device_ids: ["3"]
+              device_ids: ["0"]
               capabilities: [gpu]
     extra_hosts:
       host.docker.internal: host-gateway
-    profiles: ["local-deployment-multi-gpu"]
+    profiles: ["local-deployment-single-gpu", "local-deployment-multi-gpu"]
 
 volumes:
   via-hf-cache:
