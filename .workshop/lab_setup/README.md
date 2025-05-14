@@ -1,10 +1,13 @@
 # Start the VSS Services
 
+<img src="_static/robots/startup.png" alt="VSS Robot Character" style="float:right; max-width:350px;margin:15px;" />
+
 This NVIDIA Workbench project has been configured to manage the VSS Blueprint microservices.
+
 
 ## Configure Workbench Project
 
-> **NOTE:** If you are running this lab at an NVIDIA hosted workshop, these steps have already been done for you!
+> **NOTE:** If you are running this lab at an NVIDIA hosted workshop, these steps have already been done for you! Skip ahead to [Start the Services](#start-the-services).
 
 There are two profiles available for this project.
 
@@ -65,7 +68,7 @@ For now, wait for the log file to slow down. Then try hitting the frontend at HO
 Now you are up and running!
 Check out the blueprint demo interface by navigating to http://HOSTNAME:9100.
 
-``
+```
 TODO enable proxy support in the gradio app
 
 This frontend will be proxied through workbench so you dont have to worry about networking issues. The link in the docs will also be directly to the docs, without placeholders.
