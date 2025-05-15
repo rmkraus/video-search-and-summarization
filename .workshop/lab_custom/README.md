@@ -1,5 +1,7 @@
 # Customize VSS to a Use Case
 
+![Chunking Illustration](chunk_duration.png)
+
 ## New Use Case: Workplace Safety
 
 ## Customize off the shelf VSS
