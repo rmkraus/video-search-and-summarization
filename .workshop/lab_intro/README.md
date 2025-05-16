@@ -68,6 +68,8 @@ Open <a style="cursor: pointer;" onclick="openOrCreateFileInJupyterLab('labs/Int
 
 ## Wrap up
 
+<img src="_static/robots/strong.png" alt="VSS Robot Character" style="float:right; max-width:350px;margin:15px;" />
+
 In that excercise, we created a functional system that can help to improve safety in a warehouse.
 We did this with three pretty quick steps:
 

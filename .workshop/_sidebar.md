@@ -1,7 +1,7 @@
 
 * [Start the VSS Services](lab_setup/README.md)
 * [Interacting with VSS](lab_intro/README.md)
-* [Customizing VSS](lab_custom/index.md)
+* [Customizing VSS](lab_custom/README.md)
 * [🧑‍💻 Integrating VSS](lab_app/index.md)
 * [Next Steps](next_steps.md)
 <hr>
