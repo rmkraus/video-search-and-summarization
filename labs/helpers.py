@@ -5,7 +5,6 @@ from urllib.parse import urljoin
 
 def check_response(response):
     """Return the proper response."""
-    print(f"Response Code: {response.status_code}")
     response.raise_for_status()
     try:
         return response.json()
