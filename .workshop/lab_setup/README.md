@@ -7,17 +7,15 @@ This NVIDIA Workbench project has been configured to manage the VSS Blueprint mi
 
 ## Configure Workbench Project
 
-> **NOTE:** If you are running this lab at an NVIDIA hosted workshop, these steps have already been done for you! Skip ahead to [Start the Services](#start-the-services).
-
 There are two profiles available for this project.
 
 <!-- tabs:start -->
 
-### **Single GPU (80GB of RAM or larger)**
+### **Dual GPUs (40GB of RAM or larger)**
 
 Open your AI Workbench window and ensure you are seeing the video-search-and-summarization project. In the project, open `Environment` → `Compose`.
 
-This window is your central control panel for your development copy of the VSS Blueprint. In the `Profile` drop down, select `local-deployment-single-gpu`.
+This window is your central control panel for your development copy of the VSS Blueprint. In the `Profile` drop down, select `local-deployment-dual-gpu`.
 
 ![Workbench Compose View](compose.png)
 
