@@ -70,6 +70,7 @@ services:
   via-server:
     image: ${VIA_IMAGE:-nvcr.io/nvidia/blueprint/vss-engine:2.3.0}
     runtime: nvidia
+    restart: always
     ports:
       - "${BACKEND_PORT?}:${BACKEND_PORT?}"
       - "${FRONTEND_PORT?}:${FRONTEND_PORT?}"
