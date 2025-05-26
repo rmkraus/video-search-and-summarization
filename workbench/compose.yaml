@@ -319,7 +319,7 @@ services:
       host.docker.internal: host-gateway
     profiles: ["local-deployment-dual-gpu"]
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health/ready"]
+      test: ["CMD", "python3", "-c", "import http.client; conn = http.client.HTTPConnection('localhost', 8000); conn.request('GET', '/v1/health/ready'); response = conn.getresponse(); exit(0 if response.status == 200 else 1)"]
       interval: 30s
       timeout: 10s
       retries: 60
@@ -348,7 +348,7 @@ services:
       host.docker.internal: host-gateway
     profiles: ["local-deployment-quad-gpu"]
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health/ready"]
+      test: ["CMD", "python3", "-c", "import http.client; conn = http.client.HTTPConnection('localhost', 8000); conn.request('GET', '/v1/health/ready'); response = conn.getresponse(); exit(0 if response.status == 200 else 1)"]
       interval: 30s
       timeout: 10s
       retries: 60
@@ -426,11 +426,11 @@ services:
       NEO4J_PLUGINS: '["apoc"]'
     image: neo4j:5.26.4
     healthcheck:
-      test: ["CMD", "sh", "-c", "curl -f http://localhost:${GRAPH_DB_HTTP_PORT:-7474}/"]
-      interval: 30s
+      test: wget http://localhost:7474 || exit 1
+      interval: 1s
       timeout: 10s
-      retries: 60
-      start_period: 1800s
+      retries: 20
+      start_period: 3s
 
 volumes:
   via-hf-cache:
